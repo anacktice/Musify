@@ -63,6 +63,7 @@ Using the bug tracker as place for simple questions is fine but direct contact i
 recommended (see [Contact](#Contact) below).
 
 ## Known Bugs
+Some of the bugs that we know exist and are trying to fix them ASAP!
  - The Progress Bar sometimes goes out of sync.
  - The queue system does not work.
 
