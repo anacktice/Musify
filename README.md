@@ -1,4 +1,6 @@
-![mpv logo](https://github.com/anacktice/Musify/blob/main/Images/Musify.png)
+<p align="center">
+  <img src="https://github.com/anacktice/Musify/blob/main/Images/Musify.png" />
+</p>
 
 # Musify
 
@@ -23,7 +25,7 @@ Releases can be found on the [release list][releases].
 
 
 For official Musify builds, check out:
-[anacktice.netlify.app/musify/installation/](https://anacktice.netlify.app/musify/installation/).
+[anacktice.netlify.app/musify/installation](https://anacktice.netlify.app/musify/installation/).
 
 
 ## Bug reports
