@@ -10,6 +10,9 @@
 
 **Musify** is a free music player made using python. It allows the user to stream any song directly from the internet without any download or lag in high quality. Along with that you can also use this app to download any song of your choice and the song would be downloaded in your Music directory.
 
+![image](https://user-images.githubusercontent.com/70896614/210092592-2d41fc85-9a36-413d-93e0-f437fefaf8ea.png)
+
+
 For details on how to use the source code, see [Setup Guide](https://github.com/anacktice/Musify#setup)
 
 ## System requirements
@@ -34,6 +37,12 @@ pip install -r requirements.txt
 ```
 python Musify.pyw
 ```
+
+###$ Listen to the songs you like
+Just enter the name of the song you would like to listen to and hit on the search icon, Musify will search for the song on youtube and play it directly without any download. Or you can also hit the download button to download the song instead diretly to your Music directory.
+
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/70896614/210094175-4654bd87-81af-4164-abb3-4ebbde71e324.gif)
 
 
 ## Downloads
