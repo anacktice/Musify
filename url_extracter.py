@@ -4,7 +4,8 @@ import requests
 # ------------------- EXTRACT URL FUNCTION ------------------- #
 
 def Extract(topic):
-    """Will play video on following topic, takes about 10 to 15 seconds to load"""
+    """Will play video on following topic, might takes about 10 to 15 seconds to load"""
+
     url = 'https://www.youtube.com/results?q=' + topic
     count = 0
     cont = ''
@@ -26,7 +27,9 @@ def Extract(topic):
 
 # ------------------------------------------------------------ #
 
-def url_extracter(song_name):
+def url_extracter(song_name):  
+    """Accepts song name as input argument and returns the URL for that song"""
+
     song_url = str(subprocess.check_output(f'yt-dlp.exe -q -g {Extract(song_name)}')).split("\\n")
     return song_url[1]
 
