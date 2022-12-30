@@ -164,7 +164,6 @@ class Musify():
         """ Function that will forward the song by 10 seconds """
 
         print(Play_DLL.player.get_time())
-
         Play_DLL.player.set_time(Play_DLL.player.get_time() + 10000)
         self.i = self.i + 10
 
