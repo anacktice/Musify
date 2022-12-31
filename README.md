@@ -38,7 +38,7 @@ pip install -r requirements.txt
 python Musify.pyw
 ```
 
-###$ Listen to the songs you like
+#### Listen to the songs you like
 Just enter the name of the song you would like to listen to and hit on the search icon, Musify will search for the song on youtube and play it directly without any download. Or you can also hit the download button to download the song instead diretly to your Music directory.
 
 
