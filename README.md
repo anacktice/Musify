@@ -8,7 +8,7 @@
 ## Overview
 
 
-**Musify** is a free music player made using python. It allows the user to stream any song directly from the internet without any download or lag in high quality. Along with that you can also use this app to download any song of your choice and the song would be downloaded in your Music directory.
+**Musify** is a free music player made using python. It allows the user to stream any song directly from the internet without lag in high quality. Along with that, you can also use this app to download any song of your choice. The song would be downloaded in your Music directory in your USERS folder.
 
 ![image](https://user-images.githubusercontent.com/70896614/210092592-2d41fc85-9a36-413d-93e0-f437fefaf8ea.png)
 
@@ -19,7 +19,6 @@ For details on how to use the source code, see [Setup Guide](https://github.com/
 
 - Windows 7 or above. (We are currently working on a linux version)
 - A somewhat capable CPU.
-- A not too crappy GPU.
 
 ## Setup
 
@@ -39,7 +38,7 @@ python Musify.pyw
 ```
 
 #### Listen to the songs you like
-Just enter the name of the song you would like to listen to and hit on the search icon, Musify will search for the song on youtube and play it directly without any download. Or you can also hit the download button to download the song instead diretly to your Music directory.
+Just enter the name of the song you would like to listen to and hit on the search icon, Musify will search for the song and play it, without any download. Or you can also hit the download button to download the song instead, directly to your Music directory.
 
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/70896614/210094175-4654bd87-81af-4164-abb3-4ebbde71e324.gif)
@@ -66,6 +65,7 @@ recommended (see [Contact](#Contact) below).
 Some of the bugs that we know exist and are trying to fix them ASAP!
  - The Progress Bar sometimes goes out of sync.
  - The queue system does not work.
+We are working to fix these bugs and hopefully they would be fixed soon.
 
 ## Contributing
 
