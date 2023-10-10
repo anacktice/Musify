@@ -86,6 +86,7 @@ def play_by_yt_url(yt_url):
 
     
     play_by_song_url(url_extracter(yt_url))
+    print(play_by_song_url(url_extracter(yt_url)))
 
 
 def play_by_songName(song_name):
@@ -96,6 +97,7 @@ def play_by_songName(song_name):
     """
 
     url_of_song = get_song_url(song_name)
+    url_of_song = url_of_song.split("""\\""")[0]
     play_by_yt_url(url_of_song)
  
 def play_by_file(file_path):

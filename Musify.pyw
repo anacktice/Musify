@@ -1,3 +1,4 @@
+
 # About Author
 
 __author__ = "Anacktice Justice"
@@ -9,7 +10,7 @@ __version__ = "3.2.0"
 from tkinter import *
 import os
 from threading import *
-from PIL import ImageTk
+from PIL import ImageTk, Image
 import Play_DLL
 import Dwl_Manager
 import url_extracter
@@ -34,56 +35,49 @@ class Musify():
         self.close_app  = False
         self.length = 0
 
-        # -------------------------------------------------------------- #
-
     def close_code(self):
 
         """ Function to close the app """
 
         global close_app
+
+        print("entered")
+
         close_app = True
-
         try:
-
-            Play_DLL.player.stop() # Stops the song if it playing
-        
+            Play_DLL.player.stop()
         except:
-
             pass
-
         self.window.destroy()
+
         exit()
-  
-    # Creating functions that will add the temporary text in the search box
+    
+    
+    #creating functions that will add the temporary text in the search box
     
     def on_entry_click(self, event):
-
         """function that gets called whenever entry is clicked"""
-
         if self.token_entry.get() == 'Search':
             self.token_entry.delete(0, "end") # delete all the text in the entry
-            self.token_entry.insert(0, '')    # Insert blank for user input
+            self.token_entry.insert(0, '') #Insert blank for user input
 
     def on_focusout(self,event):
-
         """function that gets called whenever entry is out of focus"""
-
         if self.token_entry.get() == '':
             self.token_entry.insert(0, 'Search')
     
     def downloader(self):
-
         """ 
         Function to start a new thread that will download the song        
         """
-
-        t1=Thread(target=self.start_download) # Creating a thread
-        t1.start() # Starting the thread
+        t1=Thread(target=self.start_download)
+        t1.start()
     
     def start_download(self):  
         
         """ Function to download the song """
 
+        print("started")
         Dwl_Manager.start_Download(f'''{url_extracter.Extract(self.token_entry.get()+"song lyrics")}''')
     
     def add_to_queue(self, song_name):
@@ -109,19 +103,15 @@ class Musify():
     def pause_resumer(self):
         
         """ Function that will pause/resume the song. """
-
         if Play_DLL.player != "":
-
             if Play_DLL.paused:
-
-                Play_DLL.paused = False # Checks if the song is already paused or not
-                self.play_photo = PhotoImage(file = f"{self.images_dir}/paused.png") # Updates the Image of the pause button
+                Play_DLL.paused = False
+                self.play_photo = PhotoImage(file = f"{self.images_dir}/paused.png")
                 print("resumed")
-
             else:
-
-                Play_DLL.paused = True # Checks if the song is already paused or not
-                self.play_photo = PhotoImage(file = f"{self.images_dir}/playing.png") # Updates the Image of the pause button        
+                Play_DLL.paused = True
+                self.play_photo = PhotoImage(file = f"{self.images_dir}/playing.png")
+                
                 print("paused")
         
         else:
@@ -129,8 +119,8 @@ class Musify():
         
         self.play_button.configure(image=self.play_photo)
 
-        pause_thread = Thread(target=Play_DLL.pause_song) # Creating a thread to pause/resume the song
-        pause_thread.start() 
+        pause_thread = Thread(target=Play_DLL.pause_song)
+        pause_thread.start()
 
     def set_song_name_label(self, song_name):
         
@@ -148,12 +138,10 @@ class Musify():
         print(Play_DLL.player.get_time())
 
         if Play_DLL.player.get_time() > 10000:
-
             Play_DLL.player.set_time(Play_DLL.player.get_time() - 10000)
             self.i = self.i - 10
         
         else:
-
             Play_DLL.seek(0)
             self.i = 0
         
@@ -164,6 +152,7 @@ class Musify():
         """ Function that will forward the song by 10 seconds """
 
         print(Play_DLL.player.get_time())
+
         Play_DLL.player.set_time(Play_DLL.player.get_time() + 10000)
         self.i = self.i + 10
 
@@ -173,10 +162,11 @@ class Musify():
         """
         Function that will manage all the user input.
         """
-        
+        print(url_extracter.Extract(self.token_entry.get()+ "song lyrics"))
         self.SongName = (pafy.new(url_extracter.Extract(self.token_entry.get()+ "song lyrics")).title)
         self.currently_playing = self.token_entry.get()+" song lyrics"
         self.current_song = self.currently_playing
+
         
         print(self.SongName)
         
@@ -184,7 +174,8 @@ class Musify():
         self.add_to_queue(self.currently_playing)
 
         self.slider.set(0)
-        Play_DLL.play_by_songName(self.currently_playing) 
+        Play_DLL.play_by_songName(self.currently_playing)
+        
         self.progress_manager()
 
     def ProgressBar(self):
@@ -197,7 +188,7 @@ class Musify():
         self.i = 0
 
         while self.i <= x:
-            if not self.paused: # Checks if the song is paused or not
+            if not self.paused:
 
                 try:
 
@@ -210,7 +201,7 @@ class Musify():
             
                 self.i += 1
 
-            if self.close_app: # Stop the song if the user wants to quit the app
+            if self.close_app:
                 try:
                     Play_DLL.player.stop()
 
@@ -218,6 +209,7 @@ class Musify():
                     exit()
                 exit()
                     
+                # print(i)
             sleep(1)
             
         else:
@@ -226,15 +218,14 @@ class Musify():
                 for x in range(1):
                     sleep(1)
 
-                if self.close_app: # Stop the song if the user wants to quit the app
+                if self.close_app:
                     Play_DLL.player.stop()
                     exit()
 
         self.slider.set(1) # Sets the progress bar position when the song is over
 
         time.sleep(1)
-        self.slider.set(0) # Resets the progress bar position to the beginning
-        self.SongNameLabel.configure(text = "") # Reset the songname label when the song ends.
+        self.slider.set()
 
 
     def run(self):
