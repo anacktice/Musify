@@ -48,7 +48,7 @@ Just enter the name of the song you would like to listen to and hit on the searc
 
 
 For official Musify builds, check out:
-[anacktice.netlify.app/musify/installation](https://anacktice.netlify.app/musify/installation/).
+<UPCOMING>
 
 
 ## Bug reports
